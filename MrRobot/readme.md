@@ -29,7 +29,7 @@ User-agent: *
 fsocity.dic
 key-1-of-3.txt
 ```
-> open `http://10.10.171.29/key-1-of-3.txt` got the first key `073403c8a58a1f80d943455fb30724b9`
+> open `http://10.10.171.29/key-1-of-3.txt` got the first key `0xxx0xxxaxxx1xxxdxxx4xxxbxx7xxx9`
 > download fsocity.dic `http://10.10.171.29/fsocity.dic`
 
 > using gobuster and get wordpress login `wp-login`
@@ -50,14 +50,14 @@ daemon@linux:/home/robot$ cat password.raw-md5
 robot:c3fcd3d76192e4007dfb496cca67e13b
 ```
 
-> crack the `c3fcd3d76192e4007dfb496cca67e13b` result is `abcdefghijklmnopqrstuvwxyz`
+> crack the `c3fcd3d76192e4007dfb496cca67e13b` result is `axxxexxxixxxmxxxqxxxuxxxyz`
 > using that password go to robot using su
 
 ```bash
 daemon@linux:/home/robot$ su robot
 Password: 
 robot@linux:~$ cat key-2-of-3.txt 
-822c73956184f694993bede3eb39f959
+8xxx7xxx6xxxfxxx9xxxexxxexxxfxxx
 ```
 
 > open our connection using `python -m http.server 81`  in my case i open port 81 and my ip `10.4.37.160:81` and cd to `/dev/shm`
@@ -124,7 +124,7 @@ drwx------  2 root root 4096 Nov 13  2015 .cache
 cat firstboot_done
 # cat key-3-of-3.txt
 cat key-3-of-3.txt
-04787ddef27c3dee1ee161b21670b4e4
+0xxx7xxxfxxx3xxx1xxx6xxx1xxxbxxx
 ```
 
 > and ... yay!  we solved that challl....
