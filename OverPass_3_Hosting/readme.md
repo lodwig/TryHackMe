@@ -103,7 +103,7 @@
     after get reverse shell stabilize our shelll using python3
     ```bash
     python3 -c "import pty;pty.spawn('/bin/bash')"
-    stty echo -raw;fg
+    stty raw -echo;fg
     export TERM=xterm-256color
 
 
