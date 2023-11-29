@@ -1,0 +1,12 @@
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-11-29 07:01 WIB
+Nmap scan report for dev.probe.thm (10.10.79.9)
+Host is up (0.37s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+1443/tcp open  ies-lm
+8000/tcp open  http-alt
+
+Nmap done: 1 IP address (1 host up) scanned in 6.29 seconds

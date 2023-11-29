@@ -1,0 +1,39 @@
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-11-29 06:45 WIB
+Nmap scan report for dev.probe.thm (10.10.79.9)
+Host is up (0.36s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 c0:f4:db:f6:18:53:26:f9:7b:fb:73:b8:be:02:1f:61 (RSA)
+|   256 62:e3:77:a2:f6:d7:6f:01:f7:89:da:d4:6d:7e:53:21 (ECDSA)
+|_  256 f8:13:e6:f6:82:ba:16:86:5b:ac:e2:cd:d1:88:4d:16 (ED25519)
+80/tcp   open  http     lighttpd 1.4.55
+|_http-title: 403 Forbidden
+|_http-server-header: lighttpd/1.4.55
+443/tcp  open  ssl/http Apache httpd 2.4.41
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=dev.probe.thm/organizationName=Tester/stateOrProvinceName=Some-State/countryName=US
+| Not valid before: 2023-07-18T10:57:05
+|_Not valid after:  2024-07-17T10:57:05
+|_ssl-date: TLS randomness does not represent time
+|_http-title: 403 Forbidden
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+1443/tcp open  ssl/http Apache httpd 2.4.41 ((Ubuntu))
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=dev.probe.thm/organizationName=Tester/stateOrProvinceName=Some-State/countryName=US
+| Not valid before: 2023-07-18T10:57:05
+|_Not valid after:  2024-07-17T10:57:05
+|_http-title: 400 Bad Request
+|_ssl-date: TLS randomness does not represent time
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+8000/tcp open  http     Apache httpd 2.4.41 ((Ubuntu))
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+Service Info: Host: ip-10-10-79-9.eu-west-1.compute.internal; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 121.15 seconds

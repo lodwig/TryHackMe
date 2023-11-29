@@ -1,0 +1,179 @@
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-11-29 07:19 WIB
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.10.90.182
+Host is up (0.36s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+| vulners: 
+|   cpe:/a:openbsd:openssh:8.2p1: 
+|     	PRION:CVE-2020-12062	5.0	https://vulners.com/prion/PRION:CVE-2020-12062
+|     	PRION:CVE-2016-20012	5.0	https://vulners.com/prion/PRION:CVE-2016-20012
+|     	PRION:CVE-2021-28041	4.6	https://vulners.com/prion/PRION:CVE-2021-28041
+|     	PRION:CVE-2020-15778	4.4	https://vulners.com/prion/PRION:CVE-2020-15778
+|     	PRION:CVE-2020-14145	4.3	https://vulners.com/prion/PRION:CVE-2020-14145
+|     	CVE-2020-14145	4.3	https://vulners.com/cve/CVE-2020-14145
+|     	PRION:CVE-2021-41617	3.5	https://vulners.com/prion/PRION:CVE-2021-41617
+|_    	PRION:CVE-2021-36368	2.6	https://vulners.com/prion/PRION:CVE-2021-36368
+80/tcp   open  http     lighttpd 1.4.55
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-server-header: lighttpd/1.4.55
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+| vulners: 
+|   cpe:/a:lighttpd:lighttpd:1.4.55: 
+|     	PRION:CVE-2022-41556	5.0	https://vulners.com/prion/PRION:CVE-2022-41556
+|     	PRION:CVE-2022-22707	4.3	https://vulners.com/prion/PRION:CVE-2022-22707
+|     	CVE-2022-22707	4.3	https://vulners.com/cve/CVE-2022-22707
+|_    	OSV:CVE-2022-41556	0.0	https://vulners.com/osv/OSV:CVE-2022-41556
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+443/tcp  open  ssl/http Apache httpd 2.4.41
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.41: 
+|     	PACKETSTORM:171631	7.5	https://vulners.com/packetstorm/PACKETSTORM:171631	*EXPLOIT*
+|     	EDB-ID:51193	7.5	https://vulners.com/exploitdb/EDB-ID:51193	*EXPLOIT*
+|     	CNVD-2022-73123	7.5	https://vulners.com/cnvd/CNVD-2022-73123
+|     	CNVD-2022-03225	7.5	https://vulners.com/cnvd/CNVD-2022-03225
+|     	CNVD-2021-102386	7.5	https://vulners.com/cnvd/CNVD-2021-102386
+|     	1337DAY-ID-38427	7.5	https://vulners.com/zdt/1337DAY-ID-38427	*EXPLOIT*
+|     	CNVD-2022-03224	6.8	https://vulners.com/cnvd/CNVD-2022-03224
+|     	OSV:BIT-2023-31122	6.4	https://vulners.com/osv/OSV:BIT-2023-31122
+|     	CVE-2022-36760	5.1	https://vulners.com/cve/CVE-2022-36760
+|     	8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	5.1	https://vulners.com/githubexploit/8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	*EXPLOIT*
+|     	4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	5.1	https://vulners.com/githubexploit/4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	*EXPLOIT*
+|     	4373C92A-2755-5538-9C91-0469C995AA9B	5.1	https://vulners.com/githubexploit/4373C92A-2755-5538-9C91-0469C995AA9B	*EXPLOIT*
+|     	OSV:BIT-2023-45802	5.0	https://vulners.com/osv/OSV:BIT-2023-45802
+|     	OSV:BIT-2023-43622	5.0	https://vulners.com/osv/OSV:BIT-2023-43622
+|     	F7F6E599-CEF4-5E03-8E10-FE18C4101E38	5.0	https://vulners.com/githubexploit/F7F6E599-CEF4-5E03-8E10-FE18C4101E38	*EXPLOIT*
+|     	E5C174E5-D6E8-56E0-8403-D287DE52EB3F	5.0	https://vulners.com/githubexploit/E5C174E5-D6E8-56E0-8403-D287DE52EB3F	*EXPLOIT*
+|     	DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	5.0	https://vulners.com/githubexploit/DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	*EXPLOIT*
+|     	CVE-2022-37436	5.0	https://vulners.com/cve/CVE-2022-37436
+|     	CVE-2006-20001	5.0	https://vulners.com/cve/CVE-2006-20001
+|     	CNVD-2023-93320	5.0	https://vulners.com/cnvd/CNVD-2023-93320
+|     	CNVD-2023-80558	5.0	https://vulners.com/cnvd/CNVD-2023-80558
+|     	CNVD-2022-73122	5.0	https://vulners.com/cnvd/CNVD-2022-73122
+|     	CNVD-2022-53584	5.0	https://vulners.com/cnvd/CNVD-2022-53584
+|     	CNVD-2022-53582	5.0	https://vulners.com/cnvd/CNVD-2022-53582
+|     	CNVD-2022-03223	5.0	https://vulners.com/cnvd/CNVD-2022-03223
+|     	C9A1C0C1-B6E3-5955-A4F1-DEA0E505B14B	5.0	https://vulners.com/githubexploit/C9A1C0C1-B6E3-5955-A4F1-DEA0E505B14B	*EXPLOIT*
+|     	BD3652A9-D066-57BA-9943-4E34970463B9	5.0	https://vulners.com/githubexploit/BD3652A9-D066-57BA-9943-4E34970463B9	*EXPLOIT*
+|     	B0208442-6E17-5772-B12D-B5BE30FA5540	5.0	https://vulners.com/githubexploit/B0208442-6E17-5772-B12D-B5BE30FA5540	*EXPLOIT*
+|     	A820A056-9F91-5059-B0BC-8D92C7A31A52	5.0	https://vulners.com/githubexploit/A820A056-9F91-5059-B0BC-8D92C7A31A52	*EXPLOIT*
+|     	9814661A-35A4-5DB7-BB25-A1040F365C81	5.0	https://vulners.com/githubexploit/9814661A-35A4-5DB7-BB25-A1040F365C81	*EXPLOIT*
+|_    	17C6AD2A-8469-56C8-BBBE-1764D0DF1680	5.0	https://vulners.com/githubexploit/17C6AD2A-8469-56C8-BBBE-1764D0DF1680	*EXPLOIT*
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+1443/tcp open  ssl/http Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+| http-aspnet-debug: 
+|_  status: DEBUG is enabled
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|_  /phpmyadmin/: phpMyAdmin
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.41: 
+|     	PACKETSTORM:171631	7.5	https://vulners.com/packetstorm/PACKETSTORM:171631	*EXPLOIT*
+|     	EDB-ID:51193	7.5	https://vulners.com/exploitdb/EDB-ID:51193	*EXPLOIT*
+|     	CNVD-2022-73123	7.5	https://vulners.com/cnvd/CNVD-2022-73123
+|     	CNVD-2022-03225	7.5	https://vulners.com/cnvd/CNVD-2022-03225
+|     	CNVD-2021-102386	7.5	https://vulners.com/cnvd/CNVD-2021-102386
+|     	1337DAY-ID-38427	7.5	https://vulners.com/zdt/1337DAY-ID-38427	*EXPLOIT*
+|     	CNVD-2022-03224	6.8	https://vulners.com/cnvd/CNVD-2022-03224
+|     	OSV:BIT-2023-31122	6.4	https://vulners.com/osv/OSV:BIT-2023-31122
+|     	CVE-2022-36760	5.1	https://vulners.com/cve/CVE-2022-36760
+|     	8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	5.1	https://vulners.com/githubexploit/8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	*EXPLOIT*
+|     	4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	5.1	https://vulners.com/githubexploit/4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	*EXPLOIT*
+|     	4373C92A-2755-5538-9C91-0469C995AA9B	5.1	https://vulners.com/githubexploit/4373C92A-2755-5538-9C91-0469C995AA9B	*EXPLOIT*
+|     	OSV:BIT-2023-45802	5.0	https://vulners.com/osv/OSV:BIT-2023-45802
+|     	OSV:BIT-2023-43622	5.0	https://vulners.com/osv/OSV:BIT-2023-43622
+|     	F7F6E599-CEF4-5E03-8E10-FE18C4101E38	5.0	https://vulners.com/githubexploit/F7F6E599-CEF4-5E03-8E10-FE18C4101E38	*EXPLOIT*
+|     	E5C174E5-D6E8-56E0-8403-D287DE52EB3F	5.0	https://vulners.com/githubexploit/E5C174E5-D6E8-56E0-8403-D287DE52EB3F	*EXPLOIT*
+|     	DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	5.0	https://vulners.com/githubexploit/DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	*EXPLOIT*
+|     	CVE-2022-37436	5.0	https://vulners.com/cve/CVE-2022-37436
+|     	CVE-2006-20001	5.0	https://vulners.com/cve/CVE-2006-20001
+|     	CNVD-2023-93320	5.0	https://vulners.com/cnvd/CNVD-2023-93320
+|     	CNVD-2023-80558	5.0	https://vulners.com/cnvd/CNVD-2023-80558
+|     	CNVD-2022-73122	5.0	https://vulners.com/cnvd/CNVD-2022-73122
+|     	CNVD-2022-53584	5.0	https://vulners.com/cnvd/CNVD-2022-53584
+|     	CNVD-2022-53582	5.0	https://vulners.com/cnvd/CNVD-2022-53582
+|     	CNVD-2022-03223	5.0	https://vulners.com/cnvd/CNVD-2022-03223
+|     	C9A1C0C1-B6E3-5955-A4F1-DEA0E505B14B	5.0	https://vulners.com/githubexploit/C9A1C0C1-B6E3-5955-A4F1-DEA0E505B14B	*EXPLOIT*
+|     	BD3652A9-D066-57BA-9943-4E34970463B9	5.0	https://vulners.com/githubexploit/BD3652A9-D066-57BA-9943-4E34970463B9	*EXPLOIT*
+|     	B0208442-6E17-5772-B12D-B5BE30FA5540	5.0	https://vulners.com/githubexploit/B0208442-6E17-5772-B12D-B5BE30FA5540	*EXPLOIT*
+|     	A820A056-9F91-5059-B0BC-8D92C7A31A52	5.0	https://vulners.com/githubexploit/A820A056-9F91-5059-B0BC-8D92C7A31A52	*EXPLOIT*
+|     	9814661A-35A4-5DB7-BB25-A1040F365C81	5.0	https://vulners.com/githubexploit/9814661A-35A4-5DB7-BB25-A1040F365C81	*EXPLOIT*
+|_    	17C6AD2A-8469-56C8-BBBE-1764D0DF1680	5.0	https://vulners.com/githubexploit/17C6AD2A-8469-56C8-BBBE-1764D0DF1680	*EXPLOIT*
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+8000/tcp open  http     Apache httpd 2.4.41 ((Ubuntu))
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.41: 
+|     	PACKETSTORM:171631	7.5	https://vulners.com/packetstorm/PACKETSTORM:171631	*EXPLOIT*
+|     	EDB-ID:51193	7.5	https://vulners.com/exploitdb/EDB-ID:51193	*EXPLOIT*
+|     	CNVD-2022-73123	7.5	https://vulners.com/cnvd/CNVD-2022-73123
+|     	CNVD-2022-03225	7.5	https://vulners.com/cnvd/CNVD-2022-03225
+|     	CNVD-2021-102386	7.5	https://vulners.com/cnvd/CNVD-2021-102386
+|     	1337DAY-ID-38427	7.5	https://vulners.com/zdt/1337DAY-ID-38427	*EXPLOIT*
+|     	CNVD-2022-03224	6.8	https://vulners.com/cnvd/CNVD-2022-03224
+|     	OSV:BIT-2023-31122	6.4	https://vulners.com/osv/OSV:BIT-2023-31122
+|     	CVE-2022-36760	5.1	https://vulners.com/cve/CVE-2022-36760
+|     	8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	5.1	https://vulners.com/githubexploit/8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	*EXPLOIT*
+|     	4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	5.1	https://vulners.com/githubexploit/4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	*EXPLOIT*
+|     	4373C92A-2755-5538-9C91-0469C995AA9B	5.1	https://vulners.com/githubexploit/4373C92A-2755-5538-9C91-0469C995AA9B	*EXPLOIT*
+|     	OSV:BIT-2023-45802	5.0	https://vulners.com/osv/OSV:BIT-2023-45802
+|     	OSV:BIT-2023-43622	5.0	https://vulners.com/osv/OSV:BIT-2023-43622
+|     	F7F6E599-CEF4-5E03-8E10-FE18C4101E38	5.0	https://vulners.com/githubexploit/F7F6E599-CEF4-5E03-8E10-FE18C4101E38	*EXPLOIT*
+|     	E5C174E5-D6E8-56E0-8403-D287DE52EB3F	5.0	https://vulners.com/githubexploit/E5C174E5-D6E8-56E0-8403-D287DE52EB3F	*EXPLOIT*
+|     	DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	5.0	https://vulners.com/githubexploit/DB6E1BBD-08B1-574D-A351-7D6BB9898A4A	*EXPLOIT*
+|     	CVE-2022-37436	5.0	https://vulners.com/cve/CVE-2022-37436
+|     	CVE-2006-20001	5.0	https://vulners.com/cve/CVE-2006-20001
+|     	CNVD-2023-93320	5.0	https://vulners.com/cnvd/CNVD-2023-93320
+|     	CNVD-2023-80558	5.0	https://vulners.com/cnvd/CNVD-2023-80558
+|     	CNVD-2022-73122	5.0	https://vulners.com/cnvd/CNVD-2022-73122
+|     	CNVD-2022-53584	5.0	https://vulners.com/cnvd/CNVD-2022-53584
+|     	CNVD-2022-53582	5.0	https://vulners.com/cnvd/CNVD-2022-53582
+|     	CNVD-2022-03223	5.0	https://vulners.com/cnvd/CNVD-2022-03223
+|     	C9A1C0C1-B6E3-5955-A4F1-DEA0E505B14B	5.0	https://vulners.com/githubexploit/C9A1C0C1-B6E3-5955-A4F1-DEA0E505B14B	*EXPLOIT*
+|     	BD3652A9-D066-57BA-9943-4E34970463B9	5.0	https://vulners.com/githubexploit/BD3652A9-D066-57BA-9943-4E34970463B9	*EXPLOIT*
+|     	B0208442-6E17-5772-B12D-B5BE30FA5540	5.0	https://vulners.com/githubexploit/B0208442-6E17-5772-B12D-B5BE30FA5540	*EXPLOIT*
+|     	A820A056-9F91-5059-B0BC-8D92C7A31A52	5.0	https://vulners.com/githubexploit/A820A056-9F91-5059-B0BC-8D92C7A31A52	*EXPLOIT*
+|     	9814661A-35A4-5DB7-BB25-A1040F365C81	5.0	https://vulners.com/githubexploit/9814661A-35A4-5DB7-BB25-A1040F365C81	*EXPLOIT*
+|_    	17C6AD2A-8469-56C8-BBBE-1764D0DF1680	5.0	https://vulners.com/githubexploit/17C6AD2A-8469-56C8-BBBE-1764D0DF1680	*EXPLOIT*
+| http-enum: 
+|_  /phpmyadmin/: phpMyAdmin
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=11/29%OT=22%CT=1%CU=33000%PV=Y%DS=4%DC=T%G=Y%TM=656687
+OS:23%P=x86_64-apple-darwin22.4.0)SEQ(SP=106%GCD=1%ISR=108%TI=Z%CI=Z%II=I%T
+OS:S=A)OPS(O1=M508ST11NW7%O2=M508ST11NW7%O3=M508NNT11NW7%O4=M508ST11NW7%O5=
+OS:M508ST11NW7%O6=M508ST11)WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F
+OS:4B3)ECN(R=Y%DF=Y%T=40%W=F507%O=M508NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A
+OS:=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%
+OS:Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=
+OS:A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=
+OS:Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%
+OS:T=40%CD=S)
+
+Network Distance: 4 hops
+Service Info: Host: ip-10-10-90-182.eu-west-1.compute.internal; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 993/tcp)
+HOP RTT       ADDRESS
+1   107.44 ms 10.4.0.1
+2   ... 3
+4   362.93 ms 10.10.90.182
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 912.55 seconds
