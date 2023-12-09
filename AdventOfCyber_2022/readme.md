@@ -168,5 +168,14 @@
     - If you want to learn more about phishing and analysing emails, check out the Phishing module! `No Answer Needed`
 
 + Task 12  [Day 7] CyberChef Maldocs roasting on an open fire
-    - 
-    
+    - What is the version of CyberChef found in the attached VM?`9.49.0`
+    - How many recipes were used to extract URLs from the malicious doc?`10`
+    - We found a URL that was downloading a suspicious file; what is the name of that malware?`mysterygift.exe`
+    - What is the last defanged URL of the bandityeti domain found in the last step? `hxxps[://]cdn[.]bandityeti[.]THM/files/index/`
+    - What is the ticket found in one of the domains? (Format: Domain/<GOLDEN_FLAG>)`THM_MYSTERY_FLAG`
+    - If you liked the investigation today, you might also enjoy the Security Information and Event Management module! `No Answer Needed`
+
++ Task 13  [Day 8] Smart Contracts Last Christmas I gave you my ETH
+    - If not already completed, download the zip folder attached to this task, and open Remix in your preferred browser. `No Answer Needed`
+    - What flag is found after attacking the provided EtherStore Contract?`flag{411_ur_37h_15_m1n3}`
+    - Are you up for a little challenge to celebrate Day 8? Try your hand at these easy challenge rooms: Quotient and Agent T! `No Answer Needed`
