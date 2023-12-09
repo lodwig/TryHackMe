@@ -6,7 +6,9 @@
 - [Overpass 3 - Hosting](https://github.com/lodwig/TryHackMe/tree/main/OverPass_3_Hosting)
 - [Wonderland](https://github.com/lodwig/TryHackMe/tree/main/Wonderland)
 - [LookingGlass](https://github.com/lodwig/TryHackMe/tree/main/LookingGlass)
-### King Of The Hill (Koth)
+- [Stealth](https://github.com/lodwig/TryHackMe/tree/main/Stealth)
+- [Probe](https://github.com/lodwig/TryHackMe/tree/main/Probe)
+## King Of The Hill (Koth)
 - [Production](https://github.com/lodwig/TryHackMe/tree/main/Production)
 
 
