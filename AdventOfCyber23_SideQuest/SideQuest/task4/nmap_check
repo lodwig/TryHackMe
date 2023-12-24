@@ -1,0 +1,90 @@
+# Nmap 7.94 scan initiated Fri Dec 22 01:16:50 2023 as: nmap -sC -sV -oN nmap_check 10.10.215.71
+Nmap scan report for 10.10.215.71
+Host is up (0.39s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 e8:43:37:a0:ac:a6:22:57:53:00:6d:75:51:db:bc:a9 (RSA)
+|   256 25:16:18:74:8c:06:55:16:7e:20:84:89:ae:90:9a:f6 (ECDSA)
+|_  256 fc:0b:0f:e2:c0:00:bb:89:a1:8f:de:71:9d:ad:d1:63 (ED25519)
+8000/tcp open  http-alt Werkzeug/3.0.0 Python/3.8.10
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 NOT FOUND
+|     Server: Werkzeug/3.0.0 Python/3.8.10
+|     Date: Thu, 21 Dec 2023 18:18:45 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 207
+|     Connection: close
+|     <!doctype html>
+|     <html lang=en>
+|     <title>404 Not Found</title>
+|     <h1>Not Found</h1>
+|     <p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/3.0.0 Python/3.8.10
+|     Date: Thu, 21 Dec 2023 18:18:39 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 1752
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="UTF-8">
+|     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+|     <title>The BFG</title>
+|     <style>
+|     Reset margins and paddings for the body and html elements */
+|     html, body {
+|     margin: 0;
+|     padding: 0;
+|     body {
+|     background-image: url('static/imgs/snow.gif');
+|     background-size: cover; /* Adjust the background size */
+|     background-position: center top; /* Center the background image vertically and horizontally */
+|     display: flex;
+|     flex-direction: column;
+|     justify-content: center;
+|_    align-items: center;
+|_http-server-header: Werkzeug/3.0.0 Python/3.8.10
+|_http-title: The BFG
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8000-TCP:V=7.94%I=7%D=12/22%Time=6584817F%P=x86_64-apple-darwin22.4
+SF:.0%r(GetRequest,787,"HTTP/1\.1\x20200\x20OK\r\nServer:\x20Werkzeug/3\.0
+SF:\.0\x20Python/3\.8\.10\r\nDate:\x20Thu,\x2021\x20Dec\x202023\x2018:18:3
+SF:9\x20GMT\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Len
+SF:gth:\x201752\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html>\n<html\x
+SF:20lang=\"en\">\n<head>\n\x20\x20\x20\x20<meta\x20charset=\"UTF-8\">\n\x
+SF:20\x20\x20\x20<meta\x20name=\"viewport\"\x20content=\"width=device-widt
+SF:h,\x20initial-scale=1\.0\">\n\x20\x20\x20\x20<title>The\x20BFG</title>\
+SF:n\x20\x20\x20\x20<style>\n\x20\x20\x20\x20\x20\x20\x20\x20/\*\x20Reset\
+SF:x20margins\x20and\x20paddings\x20for\x20the\x20body\x20and\x20html\x20e
+SF:lements\x20\*/\n\x20\x20\x20\x20\x20\x20\x20\x20html,\x20body\x20{\n\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x200;\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20}\n\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\n\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20background-image:\x20url\('static/
+SF:imgs/snow\.gif'\);\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20bac
+SF:kground-size:\x20cover;\x20/\*\x20Adjust\x20the\x20background\x20size\x
+SF:20\*/\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-posit
+SF:ion:\x20center\x20top;\x20/\*\x20Center\x20the\x20background\x20image\x
+SF:20vertically\x20and\x20horizontally\x20\*/\n\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20display:\x20flex;\n\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20flex-direction:\x20column;\n\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20justify-content:\x20center;\n\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20")%r(FourOhFourRequest,184,"HTTP/1\.1\x20404\
+SF:x20NOT\x20FOUND\r\nServer:\x20Werkzeug/3\.0\.0\x20Python/3\.8\.10\r\nDa
+SF:te:\x20Thu,\x2021\x20Dec\x202023\x2018:18:45\x20GMT\r\nContent-Type:\x2
+SF:0text/html;\x20charset=utf-8\r\nContent-Length:\x20207\r\nConnection:\x
+SF:20close\r\n\r\n<!doctype\x20html>\n<html\x20lang=en>\n<title>404\x20Not
+SF:\x20Found</title>\n<h1>Not\x20Found</h1>\n<p>The\x20requested\x20URL\x2
+SF:0was\x20not\x20found\x20on\x20the\x20server\.\x20If\x20you\x20entered\x
+SF:20the\x20URL\x20manually\x20please\x20check\x20your\x20spelling\x20and\
+SF:x20try\x20again\.</p>\n");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Dec 22 01:20:33 2023 -- 1 IP address (1 host up) scanned in 223.46 seconds
