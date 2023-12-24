@@ -8,7 +8,7 @@
 - [LookingGlass](https://github.com/lodwig/TryHackMe/tree/main/LookingGlass)
 - [Stealth](https://github.com/lodwig/TryHackMe/tree/main/Stealth)
 - [Probe](https://github.com/lodwig/TryHackMe/tree/main/Probe)
-- [Probe](https://github.com/lodwig/TryHackMe/tree/main/Production)
+- [SQL Injection](https://github.com/lodwig/TryHackMe/tree/main/SQL_Injection)
 
 ## Advent Of Cyber
 - [2022](https://github.com/lodwig/TryHackMe/tree/main/AdventOfCyber_2022)

