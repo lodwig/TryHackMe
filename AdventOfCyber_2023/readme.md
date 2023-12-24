@@ -1,10 +1,12 @@
-# [Day 1] Machine learning Chatbot, tell me, if you're really safe?
+# Task 1 - Task 6 
++ Introduction to Advent Of Cyber 2023
+# Task 7 [Day 1] Machine learning Chatbot, tell me, if you're really safe?
 + What is McGreedy's personal email address? `t.mcgreedy@antarcticrafts.thm`
 + What is the password for the IT server room door? `BtY2S02`
 + What is the name of McGreedy's secret project? `Purple Snow`
 + If you enjoyed this room, we invite you to join our Discord server for ongoing support, exclusive tips, and a community of peers to enhance your Advent of Cyber experience `No answer needed`
 
-# [Day 2] Log analysis O Data, All Ye Faithful
+# Task 8 [Day 2] Log analysis O Data, All Ye Faithful
 + Open the notebook "Workbook" located in the directory "4_Capstone" on the VM. Use what you have learned today to analyse the packet capture. `No Answer Needed`
 ```python
 import pandas as pd
@@ -18,7 +20,7 @@ df.groupby(['Protocol']).size()
 + What was the most frequent protocol? `ICMP`
 + If you enjoyed today's task, check out the Intro to Log Analysis room. `No Answer Needed`
 
-# [Day 3] Brute-forcing Hydra is Coming to Town
+# Task 9 [Day 3] Brute-forcing Hydra is Coming to Town
 + Using crunch and hydra, find the PIN code to access the control system and unlock the door. What is the flag? `THM{pin-code-brute-force}`
     - create list of password using crunch
     ```bash
