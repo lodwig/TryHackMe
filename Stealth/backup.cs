@@ -21,9 +21,7 @@ class Program
         process.StartInfo.CreateNoWindow = true;
 
         process.Start();
-
         string output = process.StandardOutput.ReadToEnd();
-
         process.WaitForExit();
 
         if (process.ExitCode != 0)

