@@ -10,11 +10,11 @@ probably_public_bits = [
 ]
 
 private_bits = [
-	'3282356378935' # str(uuid.getnode()),  /sys/class/net/ens33/address 
+	'3031153753175' # str(uuid.getnode()),  /sys/class/net/ens33/address 
 	# Machine Id: /etc/machine-id + /proc/sys/kernel/random/boot_id + /proc/self/cgroup
+	# 'aee6189caee449718070b58132f2e4ba'
 	'aee6189caee449718070b58132f2e4ba'
 ]
-#query = "SELECT url FROM elves where url_id = '%s'" % (file_id)
 
 h = hashlib.sha1() # Newer versions of Werkzeug use SHA1 instead of MD5
 for bit in chain(probably_public_bits, private_bits):

