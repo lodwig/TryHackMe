@@ -6,7 +6,7 @@
 
 ### RECON
 - Using nmap to scan open port `nmap -sC -sV -sT 10.10.147.153 > nmap_log`
-- Using inpect element 
+- Using inspect element 
     ```html
     <!--
         Note to self, remember username!

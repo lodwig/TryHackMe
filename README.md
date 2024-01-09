@@ -12,6 +12,7 @@ Thank you for supporting me on my [Youtube Channel](https://youtube.com/c/hengki
 - [Probe](https://github.com/lodwig/TryHackMe/tree/main/Probe)
 - [SQL Injection](https://github.com/lodwig/TryHackMe/tree/main/SQL_Injection)
 - [Vuln Versity](https://github.com/lodwig/TryHackMe/tree/main/Vulnversity)
+- [Pickle Rick](https://github.com/lodwig/TryHackMe/tree/main/Pickle_Rick)
 - [Kenobi](https://github.com/lodwig/TryHackMe/tree/main/Kenobi)
 - [Steel Mountain](https://github.com/lodwig/TryHackMe/tree/main/SteelMountain)
 
