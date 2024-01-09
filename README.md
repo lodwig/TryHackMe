@@ -12,6 +12,8 @@ Thank you for supporting me on my [Youtube Channel](https://youtube.com/c/hengki
 - [Probe](https://github.com/lodwig/TryHackMe/tree/main/Probe)
 - [SQL Injection](https://github.com/lodwig/TryHackMe/tree/main/SQL_Injection)
 - [Vuln Versity](https://github.com/lodwig/TryHackMe/tree/main/Vulnversity)
+- [Kenobi](https://github.com/lodwig/TryHackMe/tree/main/Kenobi)
+- [Steel Mountain](https://github.com/lodwig/TryHackMe/tree/main/SteelMountain)
 
 ## Advent Of Cyber
 - [2022](https://github.com/lodwig/TryHackMe/tree/main/AdventOfCyber_2022)
