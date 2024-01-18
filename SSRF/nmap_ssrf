@@ -1,0 +1,36 @@
+Starting Nmap 7.94 ( https://nmap.org ) at 2024-01-17 17:29 WIB
+Nmap scan report for hrms.thm (10.10.27.136)
+Host is up (0.37s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE SERVICE            VERSION
+22/tcp   open  ssh                OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 b3:65:16:65:d8:5a:84:3c:80:9f:e7:a1:54:5e:12:42 (RSA)
+|   256 29:7d:04:d3:1a:2c:c0:d5:d4:e5:7d:3d:80:52:06:07 (ECDSA)
+|_  256 7a:14:8b:54:1c:a4:2d:4b:4e:61:b9:81:57:64:75:ee (ED25519)
+80/tcp   open  http               Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-title: HRMS web app (SSRF)
+|_Requested resource was ?url=localhost/copyright
+8080/tcp open  http               Apache httpd 2.4.54
+|_http-title: 403 Forbidden
+|_http-server-header: Apache/2.4.54 (Debian)
+9000/tcp open  hadoop-tasktracker Apache Hadoop 2.4.41 ((Ubuntu))
+| hadoop-tasktracker-info: 
+|_  Logs:  py-1
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-title: HRMS web app (SSRF)
+|_Requested resource was ?url=localhost/copyright
+| hadoop-datanode-info: 
+|_  Logs:  py-1
+Service Info: Host: 192.168.2.10; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 147.96 seconds
