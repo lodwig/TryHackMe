@@ -16,13 +16,17 @@ Thank you for supporting me on my [Youtube Channel](https://youtube.com/c/hengki
 - [Kenobi](https://github.com/lodwig/TryHackMe/tree/main/Kenobi)
 - [Steel Mountain](https://github.com/lodwig/TryHackMe/tree/main/SteelMountain)
 - [Server Side Request Forgery | SSRF](https://github.com/lodwig/TryHackMe/tree/main/SSRF)
+- [Alfred](https://github.com/lodwig/TryHackMe/tree/main/Alfred)
+- [HackPark](https://github.com/lodwig/TryHackMe/tree/main/hackPark)
 
 ## Series Of Active Directory
 - [Breaching Active Directory](https://github.com/lodwig/TryHackMe/tree/main/BreachingAD)
 - [Enumeration Active Directory](https://github.com/lodwig/TryHackMe/tree/main/enumerationAD)
 - [Lateral Movement And Pivoting](https://github.com/lodwig/TryHackMe/tree/main/LateralMovement)
+- [Exploiting Active Directory](https://github.com/lodwig/TryHackMe/tree/main/ExploitingAD)
 - [Persisten Active Directory](https://github.com/lodwig/TryHackMe/tree/main/PersistingAD)
 - [Credential Harvesting](https://github.com/lodwig/TryHackMe/tree/main/CredHarvesting)
+
 
 ## Advent Of Cyber
 - [2022](https://github.com/lodwig/TryHackMe/tree/main/AdventOfCyber_2022)
