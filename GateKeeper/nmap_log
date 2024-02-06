@@ -1,0 +1,15 @@
+Starting Nmap 7.94 ( https://nmap.org ) at 2024-02-03 18:26 WIB
+Nmap scan report for 10.10.63.147
+Host is up (0.40s latency).
+Not shown: 992 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+31337/tcp open  Elite
+49152/tcp open  unknown
+49153/tcp open  unknown
+49154/tcp open  unknown
+49155/tcp open  unknown
+49163/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 85.57 seconds
