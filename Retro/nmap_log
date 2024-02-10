@@ -1,0 +1,13 @@
+# Nmap 7.94 scan initiated Tue Feb  6 21:17:21 2024 as: nmap -sV -Pn -vv -oN nmap_log 10.10.211.112
+Nmap scan report for 10.10.211.112
+Host is up, received user-set (0.37s latency).
+Scanned at 2024-02-06 21:17:21 WIB for 348s
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE       REASON  VERSION
+80/tcp   open  http          syn-ack Microsoft IIS httpd 10.0
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Services
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/local/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Feb  6 21:23:09 2024 -- 1 IP address (1 host up) scanned in 347.91 seconds
