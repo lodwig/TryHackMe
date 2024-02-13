@@ -24,4 +24,5 @@
 ### Escalation
 + Look at the trash have a `hhupd.exe` run as administrator
 + Open with Internet Explorer and wait for error 
-+ After error 
++ After error try to save the page, when windows pop up go to `C:\Windows\system32\` and find `cmd.exe` right click to open.
++ `cmd.exe` Window will pop up and go find the `root.txt`

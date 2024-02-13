@@ -1,4 +1,4 @@
-# Mr Robot CTF Try Hack Me (10.10.171.29)
+# Mr Robot CTF Try Hack Me 
 
 
 > scan with `nmap -sC -sV 10.10.171.29 > nmap_log`

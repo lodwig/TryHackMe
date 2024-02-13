@@ -1,4 +1,5 @@
-# File Inclusion, Path Traversal
+# [File Inclusion, Path Traversal](https://tryhackme.com/room/filepathtraversal)
+
 ## Task 1  Introduction
 + Objectives
     - Understand what File Inclusion and Path Traversal attacks are and their impact.
@@ -17,7 +18,7 @@
 ## Task 6  LFI2RCE - Session Files
 + Click me to proceed to the next task. `No Answer Needed`
 ## Task 7  LFI2RCE - Log Poisoning
-+ What technique does an attacker use to inject executable code into a web server's log file and then use a file inclusion vulnerability to include and execute the malicious code?
++ What technique does an attacker use to inject executable code into a web server's log file and then use a file inclusion vulnerability to include and execute the malicious code?`Log Poisoning`
 ## Task 8  LFI2RCE - Wrappers
 + What is the content of the hidden text file in the flags folder?`THM{fl4g_cd3c67e5079de2700af6cea0a405f9cc}`
 ```payload
