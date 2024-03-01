@@ -7,7 +7,7 @@
 + How you redirect yourself to a secret page?`User-Agent`
 + What is the agent name?`chris`
 ## Task 3  Hash cracking and brute-force
-+ FTP password`crytal`
++ FTP password`crystal`
 + Zip file password`alien`
 + steg password`Area51`
 + Who is the other agent (in full name)?`james`
