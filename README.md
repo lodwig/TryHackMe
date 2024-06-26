@@ -29,6 +29,8 @@ Thank you for supporting me on my [Youtube Channel](https://youtube.com/c/hengki
 - [Root Me](https://github.com/lodwig/TryHackMe/tree/main/RootMe)
 - [CORP](https://github.com/lodwig/TryHackMe/tree/main/Corp)
 - [Content Discovery](https://github.com/lodwig/TryHackMe/tree/main/Content_Discovery)
+- [W1seGuy](https://github.com/lodwig/TryHackMe/tree/main/w1seguy)
+- [Attacking Kerberos](https://github.com/lodwig/TryHackMe/tree/main/Attacking_Kerberos)
 
 ## Buffer OverFlow
 - [Buffer OverFlow Prep](https://github.com/lodwig/TryHackMe/tree/main/BufferOverFlow)
