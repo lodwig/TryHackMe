@@ -15,7 +15,7 @@ Thank you for supporting me on my [Youtube Channel](https://youtube.com/c/hengki
 - [Pickle Rick](https://github.com/lodwig/TryHackMe/tree/main/Pickle_Rick)
 - [Kenobi](https://github.com/lodwig/TryHackMe/tree/main/Kenobi)
 - [Steel Mountain](https://github.com/lodwig/TryHackMe/tree/main/SteelMountain)
-- [Server Side Request Forgery | SSRF](https://github.com/lodwig/TryHackMe/tree/main/SSRF)
+- [Server Side Request Forgery - SSRF](https://github.com/lodwig/TryHackMe/tree/main/SSRF)
 - [Alfred](https://github.com/lodwig/TryHackMe/tree/main/Alfred)
 - [HackPark](https://github.com/lodwig/TryHackMe/tree/main/HackPark)
 - [Abusing Windows Internals](https://github.com/lodwig/TryHackMe/tree/main/AbusingWindowsInternals)
